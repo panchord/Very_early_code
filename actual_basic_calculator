@@ -1,0 +1,17 @@
+num1 = float(input("Type number: "))
+symbol = input("Type arithmetic symbol: ")
+num2 = float(input("Type second number: "))
+if symbol == "+":
+    summ = num1 + num2
+    print("Sum:", summ)
+elif symbol == "-":
+    summ = num1 - num2
+    print("Sum:", summ)
+elif symbol == "*":
+    summ = num1 * num2
+    print("Sum:", summ)
+elif symbol == "/":
+    summ = num1 / num2
+    print("Sum:", summ)
+else:
+    print("Invalid arithmetical symbol, please use +,-,* or /")
