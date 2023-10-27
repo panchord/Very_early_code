@@ -1,0 +1,14 @@
+request = input("Which pizza do you want? Pizza X or Pizza Y? - ")
+pizza_x = {"price": float(10.99), "ingredients": "Tomato sauce, Mozzarella, Basil"}
+pizza_y = {"price": float(12.99), "ingredients": "Tomato sauce, Mozzarella, Pepperoni"}
+if request == "Pizza X":
+    print("Pizza X")
+    print("Ingredients : ", pizza_x["ingredients"])
+    print("Price: ", pizza_x["price"])
+elif request == "Pizza Y":
+    print("Pizza Y")
+    print("Ingredients : ", pizza_y["ingredients"])
+    print("Price: ", pizza_y["price"])
+else:
+    print("Oops, we unfortunately don't have this kind of pizza :(")
+    
