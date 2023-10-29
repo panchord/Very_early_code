@@ -1,0 +1,26 @@
+import time
+hours = int(23)
+minutes = int(59)
+seconds = int(57)
+print("Time:", hours, ":", minutes, ":", seconds)
+seconds = seconds - 1
+seconds = seconds + 1
+while seconds < 59:
+    time.sleep(1)
+    seconds = seconds + 1
+    print("Time:", hours, ":", minutes, ":", seconds)
+if seconds == 59:
+    time.sleep(1)
+    seconds = 0
+    minutes = minutes + 1
+if minutes == 60:
+    minutes = 0
+    hours = hours + 1
+if hours == 24:
+    hours = 0
+if seconds == 0:
+    print("Time:", hours, ":", minutes, ":", seconds)
+while seconds < 99:
+    time.sleep(1)
+    seconds = seconds + 1
+    print("Time:", hours, ":", minutes, ":", seconds)
