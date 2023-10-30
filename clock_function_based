@@ -1,0 +1,25 @@
+import time
+minutes = int(59)
+seconds = int(57)
+hours = int(23)
+
+
+def tick():
+    global seconds
+    global minutes
+    global hours
+    time.sleep(1)
+    seconds = seconds + 1
+    if seconds == 60:
+        seconds = 0
+        minutes = minutes + 1
+        if minutes == 60:
+            minutes = 0
+            hours = hours + 1
+            if hours == 24:
+                hours = 0
+    print(hours, ":", minutes, ":", seconds)
+
+
+while seconds < 99:
+    tick()
