@@ -1,0 +1,7 @@
+weight = input("Weight: ")
+if input("(K)g od(L)bs? ") == "K":
+    weight = float(weight) * 2.20462262185
+    print("Weight in Lbs: ", weight)
+else:
+    weight = float(weight) / 2.20462262185
+    print("Weight in Kg: ", weight)
