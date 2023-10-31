@@ -1,0 +1,29 @@
+import time
+import keyboard
+minutes = int(0)
+seconds = int(0)
+hours = int(0)
+
+
+def tick():
+    global seconds
+    global minutes
+    global hours
+    time.sleep(1)
+    seconds = seconds + 1
+    if seconds == 60:
+        seconds = 0
+        minutes = minutes + 1
+        if minutes == 60:
+            minutes = 0
+            hours = hours + 1
+            if hours == 24:
+                hours = 0
+    print("Time: ", hours, ":", minutes, ":", seconds)
+
+
+while True:
+    tick()
+    if keyboard.is_pressed("p"):
+        print("You pressed p")
+        break
