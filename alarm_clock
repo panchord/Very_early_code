@@ -1,8 +1,8 @@
 import time
 # clock
-hours = 1
-minutes = 5
-seconds = 4
+hours = 0
+minutes = 0
+seconds = 0
 
 # alarm time
 hour = int(input("Set alarm hour: "))
