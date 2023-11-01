@@ -1,22 +1,19 @@
 command = ""
-gas = False
-breaks = True
+carRunning = False
 while True:
     command = input("> ").lower()
     if command == "start":
-        if gas is False:
+        if carRunning is False:
             print("car started")
         else:
             print("car already running")
-        breaks = False
-        gas = True
+        carRunning = True
     elif command == "stop":
-        if breaks is False:
+        if carRunning is True:
             print("car stopped")
         else:
             print("can't go slower than standing")
-        breaks = True
-        gas = False
+        carRunning = False
     elif command == "help":
         print("""
 start - to start the car
