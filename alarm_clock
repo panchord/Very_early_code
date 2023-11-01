@@ -1,0 +1,43 @@
+import time
+# clock
+hours = 1
+minutes = 5
+seconds = 4
+
+# alarm time
+hour = int(input("Set alarm hour: "))
+minute = int(input("Set alarm minute: "))
+second = int(input("Set alarm second: "))
+
+
+def ticking():
+    global seconds
+    global minutes
+    global hours
+    time.sleep(1)
+    seconds = seconds + 1
+    if seconds == 60:
+        seconds = 0
+        minutes = minutes + 1
+        if minutes == 60:
+            minutes = 0
+            hours = hours + 1
+            if hours == 24:
+                hours = 0
+    print("Time: ", hours, ":", minutes, ":", seconds)
+
+
+def alarm():
+    global seconds
+    global minutes
+    global hours
+    global second
+    global minute
+    global hour
+    if second == seconds and minute == minutes and hour == hours:
+        print("ring ring")
+
+
+while True:
+    ticking()
+    alarm()
