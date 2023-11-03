@@ -1,0 +1,78 @@
+game_time = True
+
+# rows count top to bottom
+column1 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+column2 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+column3 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+column4 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+column5 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+column6 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+column7 = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0}
+
+player_one = True
+current_player = 1
+
+print("1 2 3 4 5 6 7 <-- column")
+print("")
+print(column1["1"], column2["1"], column3["1"], column4["1"], column5["1"], column6["1"], column7["1"])
+print(column1["2"], column2["2"], column3["2"], column4["2"], column5["2"], column6["2"], column7["2"])
+print(column1["3"], column2["3"], column3["3"], column4["3"], column5["3"], column6["3"], column7["3"])
+print(column1["4"], column2["4"], column3["4"], column4["4"], column5["4"], column6["4"], column7["4"])
+print(column1["5"], column2["5"], column3["5"], column4["5"], column5["5"], column6["5"], column7["5"])
+print(column1["6"], column2["6"], column3["6"], column4["6"], column5["6"], column6["6"], column7["6"])
+
+
+def drop(column):
+    global current_player
+    if column["6"] == 0:
+        column["6"] = current_player
+    elif column["5"] == 0:
+        column["5"] = current_player
+    elif column["4"] == 0:
+        column["4"] = current_player
+    elif column["3"] == 0:
+        column["3"] = current_player
+    elif column["2"] == 0:
+        column["2"] = current_player
+    elif column["1"] == 0:
+        column["1"] = current_player
+    else:
+        print("full column, try again")
+        return
+    if current_player == 1:
+        current_player = 2
+    else:
+        current_player = 1
+    print("1 2 3 4 5 6 7 <-- column")
+    print("")
+    print(column1["1"], column2["1"], column3["1"], column4["1"], column5["1"], column6["1"], column7["1"])
+    print(column1["2"], column2["2"], column3["2"], column4["2"], column5["2"], column6["2"], column7["2"])
+    print(column1["3"], column2["3"], column3["3"], column4["3"], column5["3"], column6["3"], column7["3"])
+    print(column1["4"], column2["4"], column3["4"], column4["4"], column5["4"], column6["4"], column7["4"])
+    print(column1["5"], column2["5"], column3["5"], column4["5"], column5["5"], column6["5"], column7["5"])
+    print(column1["6"], column2["6"], column3["6"], column4["6"], column5["6"], column6["6"], column7["6"])
+
+
+def column_choice():
+    stone = int(input('''Which column do you want to place your stone in?
+> '''))
+    if stone == 1:
+        drop(column1)
+    elif stone == 2:
+        drop(column2)
+    elif stone == 3:
+        drop(column3)
+    elif stone == 4:
+        drop(column4)
+    elif stone == 5:
+        drop(column5)
+    elif stone == 6:
+        drop(column6)
+    elif stone == 7:
+        drop(column7)
+    else:
+        print("unknown column")
+
+
+while game_time is True:
+    column_choice()
