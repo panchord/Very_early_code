@@ -1,0 +1,42 @@
+shoppingList = []
+
+
+def delete(product):
+    global shoppingList
+    if product in shoppingList:
+        shoppingList.remove(product)
+        print("removed", product)
+        return
+    else:
+        print("Could not find Item")
+        backOrStay = input('''Would you like to delete an item?
+answer with "yes" to delete an item or "no" to add another one.
+> ''')
+        if backOrStay == "yes":
+            delete(product=(input('''Which item would you like to delete?
+> ''')))
+            for items in shoppingList:
+                print(items)
+        else:
+            return
+
+
+def add():
+    global shoppingList
+    newItem = input('''Add new Item:
+> ''')
+    if newItem == ("-"):
+        deleteItem = (input('''Which item would you like to delete?
+> '''))
+        delete(deleteItem)
+        return
+    elif input == "clear":
+        shoppingList.clear()
+    else:
+        shoppingList.append(newItem)
+        for items in shoppingList:
+            print(items)
+
+
+while True:
+    add()
