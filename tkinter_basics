@@ -1,0 +1,42 @@
+# statt "tkinter" zu schreiben, braucht man nur noch tk zu schreiben
+import tkinter as tk
+from tkinter import ttk  # ttk Widgeds (neuer), trennen aussehen und Funktion
+from PIL import Image, ImageTk  # "Pillow" von J.A.Clark installieren
+
+# Hauptfenster
+root = tk.Tk()
+# Titel der Anwendung
+root.title("Hier steht der Titel")
+
+# Höhe und Breite des Fensters
+root.geometry("600x400")
+# Minimalgröße beim auf- und zuziehen (geht auch für Maximalgröße)
+# root.minsize(width=400, height=200)
+
+# Kann der benutzer die Höhe des Programms anpassen?
+root.resizable(width=True, height=True)  # geht mit True/False oder nur einem Wert auf True
+
+
+# Text der angezeigt wird
+label1 = tk.Label(root, text="label1", bg="green")  # bg = background des Texts
+label2 = tk.Label(root, text="label2", bg="red")
+# Darstellung Text
+label1.pack(expand=True, fill="y")  # LayoutManager: Pack LM, Grid LM, Place LM  # expand: geht vom Rand weg
+label2.pack(side="bottom", fill="x")  # side legt zentrierung fest #fill X füllt das label auf der X- Achse, geht...
+# auch mit both
+
+label3 = ttk.Label(root, text="Label 3")  # ttk widget (neuer, mehr widgets verfügbar, Themes)
+label3.pack(side="left", fill="x")
+
+label4 = tk.Label(root)
+label4.pack()
+label4.configure(text="Label 4")  # externe configuration von labels mit config Funktion
+
+image = Image.open("TakTik.png").resize((200, 200))  # importiert Foto (Vorher auf den Ordner ziehen)
+photo = ImageTk.PhotoImage(image)  # photo aus dem eingefügten Bild generieren
+
+label5 = ttk.Label(root, image=photo)
+label5.pack()
+
+# Ende von dem, was in der Anwendung angezeigt wird
+root.mainloop()
