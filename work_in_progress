@@ -1,0 +1,46 @@
+game_time = True
+player_one = True
+current_player = 1
+
+columns = 7
+rows = 6
+arr = [[0] * columns for i in range(rows)]
+for rows in arr:
+    print(' '.join([str(x) for x in rows]))
+
+def drop(column):
+    global current_player
+    global rows
+    global columns
+    if column["6"] == 0:
+        column["6"] = current_player
+    elif column["5"] == 0:
+        column["5"] = current_player
+    elif column["4"] == 0:
+        column["4"] = current_player
+    elif column["3"] == 0:
+        column["3"] = current_player
+    elif column["2"] == 0:
+        column["2"] = current_player
+    elif column["1"] == 0:
+        column["1"] = current_player
+    else:
+        print("full column, try again")
+        return
+    if current_player == 1:
+        current_player = 2
+    else:
+        current_player = 1
+    for rows in arr:
+        print(' '.join([str(x) for x in rows]))
+
+
+def column_choice():
+    stone = int(input('''Which column do you want to place your stone in?
+> '''))
+    if stone == "1":
+        drop()
+
+
+while game_time is True:
+    column_choice()
