@@ -32,6 +32,7 @@ def add():
         return
     elif input == "clear":
         shoppingList.clear()
+        print("List cleared")
     else:
         shoppingList.append(newItem)
         for items in shoppingList:
