@@ -1,0 +1,6 @@
+<?php
+$arr = range(1,100);
+echo "0 ";
+foreach ($arr as $a) echo
+    ($a % 3 == 0 && $a % 5 == 0) ? "XY " : (($a % 5 == 0) ? "Y " : (($a % 3 == 0) ? "X " : ("$a ")));
+?>
