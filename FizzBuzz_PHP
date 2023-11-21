@@ -1,0 +1,18 @@
+<?php
+// created array 
+$arr = range(1,100);
+// 0 prints XY so I had to echo it on its own
+    echo "0 ";
+// if/elif/else to determin if 0 remains after division
+foreach ($arr as $a) {
+    if ($a % 3 == 0 && $a % 5 == 0){
+        echo "XY ";
+    } elseif ($a % 5 == 0) {
+        echo "Y ";
+    } elseif ($a % 3 == 0) {
+        echo "X ";
+    } else {
+        echo "$a ";
+    }
+}
+?>
